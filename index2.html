@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Acknowledgement😊</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      background: #111;
+      color: white;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-top: 120px;
+    }
+
+    button {
+      padding: 12px 24px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #yesBtn {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #noBtn {
+      background: gray;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1 id="text">You Still remember my bday👀,Why</h1>
+
+<button id="yesBtn">Just being nice 🙂</button>
+<button id="noBtn">I am missing you 👀</button>
+
+<script>
+
+  let step = 0;
+  const text = document.getElementById("text");
+  const yesBtn = document.getElementById("yesBtn");
+  const noBtn = document.getElementById("noBtn");
+
+  const steps = [
+   "You Still remember my bday👀,Why",
+  "Pattern noticed.",
+  "Reminder:You’re married 💍",
+  "OOPS, and a father too.😳",
+  "Be in your own World.👍"
+  ];
+  const yesTexts = [
+  "Just being Nice 🙂",
+  "Understood",
+  "Your Decision",
+  "Next Gen🏆",
+  "Proceed"
+  ];
+  const noTexts = [
+  "I am missing you",
+  "Still trying",
+  "Go on",
+  "Doesn't matter",
+  "Irrelevant"
+  ];
+
+ yesBtn.innerText = yesTexts[0];
+ noBtn.innerText = noTexts[0];
+
+  document.getElementById("yesBtn").onclick = nextStep;
+  document.getElementById("noBtn").onclick = nextStep;
+
+function nextStep() {
+  step++;
+
+  if (step < steps.length) {
+    text.innerText = steps[step];
+
+    // update button text
+    yesBtn.innerText = yesTexts[step];
+    noBtn.innerText = noTexts[step];
+
+  } else {
+    document.body.innerHTML = `
+     <h1>Leave from my world 😇</h1>
+        <h2 style="opacity:0.7;">Respect boundaries. Always.</h2>
+  <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" 
+       style="width:250px; margin-top:20px;">
+    `;
+  }
+}
+
+  noBtn.addEventListener("mouseover", () => {
+    noBtn.style.left = Math.random() * window.innerWidth + "px";
+    noBtn.style.top = Math.random() * window.innerHeight + "px";
+  });
+</script>
+
+</body>
+</html>
