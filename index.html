@@ -39,10 +39,10 @@
 
 <body>
 
-<h1 id="text">You Still remember my bday👀,Why</h1>
+<h1 id="text">You Still remember my bday❤️,Awww</h1>
 
 <button id="yesBtn">Just being nice 🙂</button>
-<button id="noBtn">I am missing you 👀</button>
+<button id="noBtn">I am missing you❤️</button>
 
 <script>
 
@@ -100,9 +100,18 @@ function nextStep() {
 }
 
   noBtn.addEventListener("mouseover", () => {
-    noBtn.style.left = Math.random() * window.innerWidth + "px";
-    noBtn.style.top = Math.random() * window.innerHeight + "px";
-  });
+  const btnWidth = noBtn.offsetWidth;
+  const btnHeight = noBtn.offsetHeight;
+
+  const maxX = window.innerWidth - btnWidth;
+  const maxY = window.innerHeight - btnHeight;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
 </script>
 
 </body>
